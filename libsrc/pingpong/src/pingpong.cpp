@@ -10,6 +10,7 @@ void PingPong::ping()
         	cv_.notify_all();
         	cv_.wait(lock);
     	}
+	cv_.notify_all();
  	}
 
 void PingPong::pong()
@@ -22,4 +23,5 @@ void PingPong::pong()
         	cv_.notify_all();
         	cv_.wait(lock);
     	}
+	cv_.notify_all();
 	}
